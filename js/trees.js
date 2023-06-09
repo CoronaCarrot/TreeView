@@ -45,21 +45,16 @@ let updatetrees = function() {
     // round
     treesLost = Math.round(treesLost);
 
-    telt = document.getElementById("trees-lost")
-    // update the trees lost counter
-    currentVal = parseInt(telt.innerHTML.replace(/,/g, ""));
-    if (currentVal == 0) {
-        telt.innerHTML = treesLost;
-        currentVal = treesLost;
-    }
-
-    animateCounter(currentVal, treesLost, telt, 1000);
-    
-    79
-
-    // update the total trees preview
-    visualisation = document.getElementById("tree-preview");
-    visualisation.style.height = 16 * (treesLost / 79) + "px";
+    telt = document.querySelectorAll("#trees-lost");
+    telt.forEach(function(elt) {
+        // update the trees lost counter
+        currentVal = parseInt(elt.innerHTML.replace(/,/g, ""));
+        if (currentVal == 0) {
+            elt.innerHTML = treesLost;
+            currentVal = treesLost;
+        }
+        animateCounter(currentVal, treesLost, elt, 500);
+    });
 };
 
 updatetrees();

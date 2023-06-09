@@ -1,0 +1,181 @@
+body {
+    padding: 0;
+    margin: 0;
+    min-height: 10000vh;
+    background-color: rgb(139, 201, 228);
+    animation: body 10s linear;
+  }
+  @keyframes body {
+    to {
+      background-color: rgb(19, 48, 97);
+    }
+  }
+  
+  .progress {
+    height: 3px;
+    width: 0%;
+    z-index: 1000;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    animation: progress 10s linear;
+  }
+  @keyframes progress {
+    to {
+      background-color: rgb(20, 255, 226);
+      width: 100%;
+    }
+  }
+
+  .t1 {
+    animation: title 0.3s linear;
+  }
+  @keyframes title {
+    to {
+        /* make transparent */
+        color: rgba(255, 255, 255, 0);
+        background-color: rgba(255, 255, 255, 0);
+        transform: translate(-50%, -80%);
+    }
+  }
+
+  .stats-topleft {
+    animation: stats-topleft 0.3s linear;
+  }
+    @keyframes stats-topleft {
+        0% {
+            /* make transparent */
+            opacity: 0;
+        }
+        99% {
+            /* make visible */
+            opacity: 0;
+        }
+        100% {
+            /* make visible */
+            opacity: 1;
+        }
+    }
+
+  .scroll-indicator {
+    animation: scroll-indicator 0.0005s linear;
+  }
+    @keyframes scroll-indicator {
+        to {
+            /* make transparent */
+            opacity: 0;
+        }
+    }
+
+  .p5 {
+    animation: p5 2s linear;
+  }
+    @keyframes p5 {
+        to {
+            /* make transparent */
+            opacity: 0;
+        }
+    }
+
+    .p4 {
+    animation: p4 4s linear;
+    }
+    @keyframes p4 {
+        /* delay 2 seconds */
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            /* make transparent */
+            opacity: 0;
+        }
+    }
+
+    .p3 {
+    animation: p3 6s linear;
+    }
+    @keyframes p3 {
+        /* delay 4 seconds */
+        0% {
+            opacity: 1;
+        }
+        75% {
+            opacity: 1;
+        }
+        100% {
+            /* make transparent */
+            opacity: 0;
+        }
+    }
+
+    .p2 {
+    animation: p2 8s linear;
+    }
+    @keyframes p2 {
+        /* delay 6 seconds */
+        0% {
+            opacity: 1;
+        }
+        87.5% {
+            opacity: 1;
+        }
+        100% {
+            /* make transparent */
+            opacity: 0;
+        }
+    }
+
+    .p1 {
+    animation: p1 10s linear;
+    }
+    @keyframes p1 {
+        /* delay 8 seconds */
+        0% {
+            opacity: 1;
+        }
+        93.75% {
+            opacity: 1;
+        }
+        100% {
+            /* make transparent */
+            opacity: 0;
+        }
+    }
+
+    .vignette {
+    animation: vignette 10s linear;
+    }
+    @keyframes vignette {
+        to {
+            /* make transparent */
+            opacity: 0;
+        }
+    }
+
+    .vignette-red {
+    animation: vignette-red 10s linear;
+    }
+    @keyframes vignette-red {
+        0% {
+            opacity: 0
+        }
+        100% {
+            /* make transparent */
+            opacity: 1;
+        }
+    }
+
+  
+  :root * {
+    /* Pause the animation */
+    animation-play-state: paused;
+    /* Bind the animation to scroll */
+    animation-delay: calc(var(--scroll) * -10s);
+    /* These last 2 properites clean up overshoot weirdness */
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+  }

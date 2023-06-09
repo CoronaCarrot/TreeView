@@ -6,18 +6,27 @@ body {
     margin: 0;
     padding: 0;
 
-    width: 100vw;
-    height: 100vh;
+    min-height: 500vh;
 
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+.invisiscroll::-webkit-scrollbar {
+    display: none;
+}
+  
+/* Hide scrollbar for IE, Edge and Firefox */
+.invisiscroll {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
 .content {
+    position: fixed;
     width: 100%;
     height: 100%;
     margin: 0 auto;
     padding: 0;
-
-    overflow-y: scroll;
 }
 
 .calling-card {
@@ -43,59 +52,59 @@ main {
     transition: 0.45s cubic-bezier(0.2,0.49,0.32,0.99);
 }
 
-.p6 {
+.p6, .p6g {
     z-index: 1;
     position: absolute;
-    width: 2250px;
+    width: 2550px;
     top: calc(50% + 150px);
     left: calc(50%);
     transform: translate(-50%, -50%);
 }
 
-.p5 {
+.p5, .p5g {
     z-index: 2;
     position: absolute;
-    width: 2200px;
+    width: 2500px;
     top: calc(50% + 150px);
     left: calc(50%);
     transform: translate(-50%, -50%);
     opacity: 1;
 }
 
-.p4 {
+.p4, .p4g {
     z-index: 3;
     position: absolute;
-    width: 2150px;
+    width: 2450px;
     top: calc(50% + 150px);
     left: calc(50%);
     transform: translate(-50%, -50%);
     opacity: 0.95;
 }
 
-.p3 {
+.p3, .p3g {
     z-index: 4;
     position: absolute;
-    width: 2100px;
+    width: 2400px;
     top: calc(50% + 150px);
     left: calc(50%);
     transform: translate(-50%, -50%);
     opacity: 0.9;
 }
 
-.p2 {
+.p2, .p2g {
     z-index: 5;
     position: absolute;
-    width: 2050px;
+    width: 2350px;
     top: calc(50% + 150px);
     left: calc(50%);
     transform: translate(-50%, -50%);
     opacity: 0.85;
 }
 
-.p1 {
+.p1, .p1g {
     z-index: 6;
     position: absolute;
-    width: 2000px;
+    width: 2300px;
     top: calc(50% + 150px);
     left: calc(50%);
     transform: translate(-50%, -50%);
@@ -112,7 +121,20 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
 
-    background-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 34%, rgba(0, 0, 0, 0.7));
+    background-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 34%, rgba(0, 0, 0, 0.4));
+}
+
+.vignette-red {
+    z-index: 100;
+    position: absolute;
+    
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 1%, rgba(0, 0, 0, 0.8));
 }
 
 .text {
@@ -121,6 +143,8 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    width: 500px;
 
     pointer-events: auto !important;
 
@@ -135,8 +159,9 @@ main {
     background-color: #333;
     padding: 20px;
     border-radius: 10px;
-    opacity: 0.8;
+
 }
+
 .text h1 {
     font-size: 4em;
     margin: 0;
@@ -162,6 +187,31 @@ main {
     align-items: center;
 
     white-space: pre;
+}
+
+.stats-topleft {
+    opacity: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    white-space: pre;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+
+    color: #fff;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: left;
+
+    /* Chakra Petch font */
+    font-family: 'Chakra Petch', sans-serif;
 }
 
 .scroll-indicator {

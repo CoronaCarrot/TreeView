@@ -192,6 +192,12 @@ main {
 
 }
 
+.opt {
+    z-index: 7;
+    opacity: 0.2;
+    text-shadow: none !important;
+}
+
 .stats {
     display: flex;
     flex-direction: row;
@@ -236,7 +242,7 @@ main {
     left: 50%;
     transform: translate(-50%, 0);
 
-    width: 100px;
+    width: 150px;
     height: 50px;
 }
 .scroll-indicator p {

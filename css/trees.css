@@ -173,26 +173,26 @@ main {
 }
 
 .text h1 {
-    font-size: 3.9em;
+    font-size: 8vmin;
     margin: 0;
     padding: 0;
 
 }
 .text h2 {
-    font-size: 4em;
+    font-size: 9vmin;
     margin: 0;
     padding: 0;
 
 }
 .text p {
-    font-size: 1.5em;
+    font-size: 3vmin;
     margin: 0;
     padding: 0;
     z-index: 3;
 
 }
 
-.opt {
+.opt, .opt5 {
     z-index: 7;
     opacity: 0.2;
     text-shadow: none !important;
@@ -323,4 +323,39 @@ main {
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+.t2 {
+    font-size: 4vmin;
+    margin: 0;
+    padding: 0;
+    z-index: 6;
+}
+
+.i1, .i2 {
+    /* image */
+    z-index: 6;
+    position: absolute;
+    height: 315px;
+    transform: translate(-50%, -50%);
+}
+
+.t3 {
+    font-size: 4vmin;
+    margin: 0;
+    padding: 0;
+    z-index: 6;
+}
+
+.t4 {
+    font-size: 6vmin;
+    margin: 0;
+    padding: 0;
+    z-index: 6;
+}
+
+.t5 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

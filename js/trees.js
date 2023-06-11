@@ -24,10 +24,12 @@ function animateCounter(i, endNbr, elt, duration = 1000, decimals = 0) {
 
 var trees = {
     "netloss": 12400000000,
+    "snetloss": 50000,
     "totalloss": 0
 }
 
 let treesPerYear = trees.netloss;
+let speciesPerYear = trees.snetloss;
 // get start of year as a unix timestamp
 let startOfYear = new Date(new Date().getFullYear(), 0, 1).getTime();
 // get end of year as a unix timestamp
@@ -57,10 +59,37 @@ let updatetrees = function() {
     });
 };
 
+let speciesLost = 0;
+let updatespecies = function() {
+    // get today as a unix timestamp
+    let now = new Date().getTime();
+    // get the amount of time that has passed since the start of the year
+    let timePassed = now - startOfYear;
+
+    // get the amount of species that have been lost since the start of the year
+    speciesLost = speciesPerYear * (timePassed / (endOfYear - startOfYear));
+    // round
+    speciesLost = Math.round(speciesLost);
+
+    telt = document.querySelectorAll("#species-lost");
+    telt.forEach(function(elt) {
+        // update the species lost counter
+        currentVal = parseInt(elt.innerHTML.replace(/,/g, ""));
+        if (currentVal == 0) {
+            elt.innerHTML = speciesLost;
+            currentVal = speciesLost;
+        }
+        animateCounter(currentVal, speciesLost, elt, 500);
+    });
+};
+
+
 updatetrees();
+updatespecies();
 
 // every second
 let interval = setInterval(function() {
     updatetrees();
+    updatespecies();
 }, 1000);
 

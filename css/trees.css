@@ -178,6 +178,11 @@ main {
     padding: 0;
 
 }
+@media (min-width: 600px) {
+    .text h1 {
+        font-size: 7vmin;
+    }
+}
 .text h2 {
     font-size: 9vmin;
     margin: 0;
@@ -213,7 +218,7 @@ main {
     opacity: 0;
     z-index: 1000;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     white-space: pre;
     position: absolute;
     top: 0;
@@ -233,6 +238,14 @@ main {
     /* Chakra Petch font */
     font-family: 'Chakra Petch', sans-serif;
     text-shadow: 0px 0px 25px rgba(0, 0, 0, 1);
+}
+.stl-c {
+    display: flex;
+    flex-direction: row;
+}
+.stl-c h2 {
+    padding: 0;
+    margin: 0;
 }
 
 .scroll-indicator {
@@ -355,7 +368,14 @@ main {
 }
 
 .t5 {
+    z-index: 4;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.opt5 {
+    z-index: 7;
+    opacity: 0.2;
+    text-shadow: none !important;
 }
